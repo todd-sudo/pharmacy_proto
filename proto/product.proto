@@ -28,18 +28,26 @@ message ErrorResponse {
   string msg = 2;
 }
 
+message Filter {
+  bool is_active = 1;
+  string date_updated_lte = 2;
+  string date_updated_gte = 3;
+}
+
 message RequestData {
   int64 limit = 1;
   int64 last_id = 2;
   string api_key = 3;
-  int64 competitor_source = 4;
+  Filter filters = 4;
+  int64 competitor_source = 5;
 }
 
 message ResponseData {
   ErrorResponse errors = 1;
   int64 limit = 2;
   int64 last_id = 3;
-  repeated MainProduct goods = 4;
+  Filter filters = 4;
+  repeated MainProduct goods = 5;
 }
 
 message MainProduct {
