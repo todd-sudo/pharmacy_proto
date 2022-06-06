@@ -39,7 +39,7 @@ message RequestData {
   int64 last_id = 2;
   string api_key = 3;
   Filter filters = 4;
-  int64 competitor_source = 5;
+  string competitor_source = 5;
 }
 
 message ResponseData {
